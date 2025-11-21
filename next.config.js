@@ -1,8 +1,5 @@
-const repo = "web-app-test";
-
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
-  trailingSlash: true,
 };
+
+module.exports = nextConfig;
