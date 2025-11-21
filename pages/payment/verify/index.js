@@ -1,0 +1,24 @@
+import Head from "next/head";
+
+export default function VerifyPage() {
+  return (
+    <>
+      <Head>
+        <title>Verify Policy</title>
+        <meta property="og:title" content="Verify Policy Page" />
+        <meta
+          property="og:description"
+          content="Static description for payment verify"
+        />
+        <meta property="og:image" content="/og-verify.jpg" />
+        <meta
+          property="og:url"
+          content="https://username.github.io/your-repo/payment/verify"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
+
+      <h1>Verify Page</h1>
+    </>
+  );
+}

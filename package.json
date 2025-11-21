@@ -1,0 +1,20 @@
+{
+  "name": "web-app-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "next export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "next": "^12.3.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
