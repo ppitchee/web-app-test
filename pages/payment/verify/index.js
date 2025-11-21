@@ -10,7 +10,7 @@ export default function VerifyPage() {
           property="og:description"
           content="Static description for payment verify"
         />
-        <meta property="og:image" content="/og-verify.jpg" />
+        <meta property="og:image" content="/Web_Banner_1440x400_DT_TH.webp.jpg" />
         <meta
           property="og:url"
           content="https://web-app-test-self.vercel.app/payment/verify"

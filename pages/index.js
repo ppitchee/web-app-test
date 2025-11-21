@@ -25,7 +25,7 @@ export async function getServerSideProps() {
   const data = {
     title: "Dynamic Home",
     description: "Dynamic OG on Vercel",
-    image: "https://web-app-test-self.vercel.app/og-image.png",
+    image: "https://web-app-test-self.vercel.app/Web_Banner_1440x400_DT_TH.webp",
   };
 
   return { props: data };
