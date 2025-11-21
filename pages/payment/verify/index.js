@@ -13,7 +13,7 @@ export default function VerifyPage() {
         <meta property="og:image" content="/og-verify.jpg" />
         <meta
           property="og:url"
-          content="https://username.github.io/your-repo/payment/verify"
+          content="https://web-app-test-self.vercel.app/payment/verify"
         />
         <meta property="og:type" content="website" />
       </Head>

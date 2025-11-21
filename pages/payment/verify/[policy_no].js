@@ -14,7 +14,7 @@ export default function VerifyPage({ policy_no }) {
         <meta property="og:image" content="/Web_Banner_1440x400_DT_TH.webp" />
         <meta
           property="og:url"
-          content={`https://ppitchee.github.io/web-app-test/payment/verify`}
+          content={`hthttps://web-app-test-self.vercel.app/payment/verify`}
         />
         <meta property="og:type" content="website" />
       </Head>

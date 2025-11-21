@@ -1,27 +1,29 @@
-import Head from "next/head";
+export async function getServerSideProps() {
+  const data = {
+    title: "Dynamic Home",
+    description: "Dynamic OG on Vercel",
+    image: "https://web-app-test-self.vercel.app/og-image.png",
+  };
 
-export default function Home() {
+  return { props: data };
+}
+
+export default function Home({ title, description, image }) {
   return (
     <>
       <Head>
-        <title>My GitHub Pages – Home</title>
-
-        {/* Required */}
-        <meta property="og:title" content="My GitHub Home" />
-        <meta property="og:description" content="This is my homepage on GitHub Pages built with Next.js 12." />
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
         <meta property="og:type" content="website" />
-
-        {/* Must be absolute URL for FB/Twitter */}
-        <meta property="og:image" content="https://<your-github-username>.github.io/<repo-name>/og-image.png" />
-        <meta property="og:url" content="https://<your-github-username>.github.io/<repo-name>/" />
-
-        {/* Twitter */}
+        <meta property="og:url" content="https://web-app-test-self.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <main style={{ padding: 40 }}>
-        <h1>Welcome to My Next.js 12 GitHub Page</h1>
-        <p>This page is exported statically and supports OG tags.</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </main>
     </>
   );
