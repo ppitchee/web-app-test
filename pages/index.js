@@ -1,12 +1,4 @@
-export async function getServerSideProps() {
-  const data = {
-    title: "Dynamic Home",
-    description: "Dynamic OG on Vercel",
-    image: "https://web-app-test-self.vercel.app/og-image.png",
-  };
-
-  return { props: data };
-}
+import Head from "next/head";
 
 export default function Home({ title, description, image }) {
   return (
@@ -27,4 +19,14 @@ export default function Home({ title, description, image }) {
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const data = {
+    title: "Dynamic Home",
+    description: "Dynamic OG on Vercel",
+    image: "https://web-app-test-self.vercel.app/og-image.png",
+  };
+
+  return { props: data };
 }
