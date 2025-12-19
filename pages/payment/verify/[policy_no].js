@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 export default function VerifyPage({metaData, policy_no }) {
+  console.log("policy_no",policy_no);
   return (
     <>
       <Head>
@@ -27,10 +28,9 @@ export default function VerifyPage({metaData, policy_no }) {
 }
 
 export async function getServerSideProps(context) {
-  const { locale,policy_no } = context;
+  const { policy_no } = context;
 
-  const host = process.env.NEXT_PUBLIC_FRONT_URL;
-  const urlImg = host + 'web_banner_v1.jpg';
+  const urlImg = '/web_banner_v1.jpg';
   const url = `https://${context.req.headers.host}${context.resolvedUrl}`;
 
   return {
