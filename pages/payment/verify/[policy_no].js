@@ -28,10 +28,11 @@ export default function VerifyPage({metaData, policy_no }) {
 }
 
 export async function getServerSideProps(context) {
-  const { policy_no } = context;
+  const { policy_no } = context.params;
 
-  const urlImg = '/web_banner_v1.jpg';
-  const url = `https://${context.req.headers.host}${context.resolvedUrl}`;
+  const host =`https://${context.req.headers.host}`
+  const urlImg = `${host}/web_banner_v1.jpg`;
+  const url = `${host}${context.resolvedUrl}`;
 
   return {
     props: {
