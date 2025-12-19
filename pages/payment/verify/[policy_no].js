@@ -1,23 +1,24 @@
 import Head from "next/head";
 
-export default function VerifyPage({ policy_no }) {
+export default function VerifyPage({metaData, policy_no }) {
   return (
     <>
       <Head>
-        <title>Verify Policy</title>
+          <title>{metaData?.title}</title>
 
-        <meta property="og:title" content="Verify Policy Page" />
-        <meta
-          property="og:description"
-          content={`Verification for policy ${policy_no}`}
-        />
-        <meta property="og:image" content="/Web_Banner_1440x400_DT_TH.webp" />
-        <meta
-          property="og:url"
-          content={`hthttps://web-app-test-self.vercel.app/payment/verify`}
-        />
-        <meta property="og:type" content="website" />
-      </Head>
+          <meta name='description' content={metaData?.description} />
+          <meta property='og:title' content={metaData?.title} />
+          <meta property='og:description' content={metaData?.description} />
+          <meta property='og:type' content='website' />
+          <meta property='og:image' content={metaData?.imageUrl} />
+          <meta property='og:image:width' content='1200' />
+          <meta property='og:image:height' content='630' />
+          <meta property='og:url' content={metaData?.url} />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:title' content={metaData?.title} />
+          <meta name='twitter:description' content={metaData?.description} />
+          <meta name='twitter:image' content={metaData?.imageUrl} />
+        </Head>
 
       <h1>Verify Page</h1>
       <p>Policy: {policy_no}</p>
@@ -26,9 +27,22 @@ export default function VerifyPage({ policy_no }) {
 }
 
 export async function getServerSideProps(context) {
-  const { policy_no } = context.query;
+  const { locale,policy_no } = context;
+
+  const host = process.env.NEXT_PUBLIC_FRONT_URL;
+  const urlImg = host + 'web_banner_v1.jpg';
+  const url = `https://${context.req.headers.host}${context.resolvedUrl}`;
 
   return {
-    props: { policy_no },
+    props: {
+      metaData: {
+        title: 'ระบบชำระเงินออนไลน์ l เมืองไทยประกันชีวิต - MTL',
+        description:
+          'บริษัทไม่มีนโยบายให้โอนเข้าบัญชีส่วนตัวของตัวแทน ชำระเบี้ยตรงผ่าน Thai QR, Mobile Banking หรือบัตรเครดิต ตาม Link ด้านบนเท่านั้น',
+        url: url,
+        imageUrl: urlImg,
+      },
+      policy_no,
+    },
   };
 }
